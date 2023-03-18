@@ -11,8 +11,53 @@ generator client {
 // Define your own datamodels here and run `yarn redwood prisma migrate dev`
 // to create migrations for them and apply to your dev DB.
 // TODO: Please remove the following example:
-model UserExample {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+
+model User {
+  id          String   @id
+  username    String? // platform username
+  address     String?  @unique // Torus wallet address
+  locale      String?
+  email       String? // Email address
+  // --------------- STATE --------------
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  mfa_enabled Boolean?
+  imageSrc    String? // Avatar URL
+  country     String? // Player's country  eg. US, DE
+  banned      Boolean  @default(false)
+  blocked     Boolean? // Prevents others from interacting with this person
+  betaAccess  Boolean  @default(false)
+
+  // For authentication only
+  refreshToken String?
+  accessToken  String?
+
+  oauth           OAuth[]
+  oauthConnection OAuthConnection[]
 }
+
+// OAuth2 session details for state + PKCE
+// Used for both authorization and authentication
+model OAuth {
+  state         String   @id
+  codeChallenge String
+  codeVerifier  String
+  createdAt     DateTime @default(now())
+  user          User?    @relation(fields: [userId], references: [id])
+  userId        String?
+}
+
+// For authorization only
+model OAuthConnection {
+  id           String    @id @default(uuid())
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  user         User      @relation(fields: [userId], references: [id])
+  userId       String
+  type         String
+  revoked      Boolean   @default(false)
+  refreshToken String?
+  accessToken  String
+  expiration   DateTime?
+}
+
