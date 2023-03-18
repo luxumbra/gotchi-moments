@@ -2,7 +2,7 @@ import { Link, routes } from '@redwoodjs/router'
 
 const Header = () => {
   return (
-    <header>
+    <header className="site-header">
       <h1>
         <Link to={routes.home()}>GotchiMemories</Link>
       </h1>

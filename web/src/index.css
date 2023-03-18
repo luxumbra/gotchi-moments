@@ -1,27 +1,51 @@
-/* Style the header element like a typical header with site navigation in a two column flex-box layout */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1em;
-  background-color: #f1f1f1;
+@layer base {
+  html {
+    @apply font-sans bg-zinc-800;
+  }
+
+  body {
+    @apply min-h-screen overflow-x-hidden text-zinc-100 bg-zinc-800;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    @apply bg-zinc-500;
+
+    border-radius: 2px;
+    box-shadow: inset 0 0 5px rgb(0 0 0 / 70%);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    @apply bg-cyan-500 transition-colors duration-300 ease-in-out opacity-70;
+
+    border-radius: 2px;
+    box-shadow: 0 0 5px rgb(0 0 0 / 70%);
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-cyan-600 opacity-100;
+  }
 }
 
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  list-style-type: none;
-  gap: 1em;
+@layer components {
+  .site-header {
+    @apply flex flex-row justify-between items-center p-4 bg-zinc-700  text-lg fixed w-full;
+  }
+  .site-header nav {
+    @apply flex flex-row justify-between items-center;
+  }
+  .site-header nav ul {
+    @apply flex flex-row justify-between items-center list-none gap-6;
+  }
 }
 
