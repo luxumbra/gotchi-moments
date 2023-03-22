@@ -1,6 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d4c6b4d0-d10f-4484-b2de-9ba32c847913/deploy-status)](https://app.netlify.com/sites/silly-salmiakki-2485d3/deploys)
+# README
 
-## Welcome to GotchiMoments!
+Welcome to [RedwoodJS](https://redwoodjs.com)!
 
 > **Prerequisites**
 >
@@ -17,7 +17,7 @@ Then change into that directory and start the development server:
 
 ```
 cd my-redwood-project
-yarn rw dev
+yarn redwood dev
 ```
 
 Your browser should automatically open to http://localhost:8910 where you'll see the Welcome Page, which links out to a ton of great resources.
