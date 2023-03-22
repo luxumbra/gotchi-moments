@@ -1,4 +1,6 @@
+import Footer from 'src/components/Footer/Footer'
 import Header from 'src/components/Header/Header'
+import 'src/index.css'
 
 type AppLayoutProps = {
   children?: React.ReactNode
@@ -9,9 +11,11 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     <>
       <Header />
 
-      <main className="w-full min-h-full flex">
+      <main className="flex min-h-full w-full">
         <div className="container mx-auto py-24">{children}</div>
       </main>
+
+      <Footer />
     </>
   )
 }

@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   purge: ['./src/**/*.js', './src/**/*.tsx'],
   darkMode: ['class', '[data-theme="dark"]'], // or 'media' or 'class'
@@ -19,7 +20,7 @@ module.exports = {
         customDarkBgTransparentLighter: 'rgb(48, 49, 54, 0.7)',
       },
       fontFamily: {
-        Inter: 'Inter',
+        inter: 'Inter',
         display: '"Baloo 2", cursive',
       },
       screens: {
@@ -43,4 +44,14 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('daisyui'),
   ],
+  daisyui: {
+    styled: true,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
 }

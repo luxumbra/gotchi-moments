@@ -52,7 +52,7 @@ const LoginPortal = () => {
   const getButton = (type, text) => (
     <button
       onClick={() => onSubmitSignUp(type)}
-      className="btn btn-primary mt-2 border"
+      className="btn btn-primary mt-2"
       type="button"
     >
       {text}
@@ -75,9 +75,9 @@ const LoginPortal = () => {
 
         <div className="login-portal-container--button-wrapper text-center ">
           <ul className="flex flex-col space-y-6">
-            {/*<li>{getButton('KEYP_KEYP', 'Keyp')}</li>*/}
+            <li>{getButton('KEYP_KEYP', 'Keyp')}</li>
             <li>{getButton('KEYP_DISCORD', 'Discord')} </li>
-            <li>{getButton('KEYP_GITHUB', 'Github')} </li>
+            {/* <li>{getButton('KEYP_GITHUB', 'Github')} </li> */}
             <li>{getButton('KEYP_TWITTER', 'Twitter')} </li>
           </ul>
           {errorText && <div className="rw-cell-error mt-2">{errorText}</div>}
