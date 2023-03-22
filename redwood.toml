@@ -6,13 +6,14 @@
 # https://redwoodjs.com/docs/app-configuration-redwood-toml
 
 [web]
-  title = "Redwood App"
+  title = "GotchiMoments"
+  host = "localhost"
   port = 8910
   apiUrl = "/.netlify/functions"
-  includeEnvironmentVariables = [] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
+  includeEnvironmentVariables = ['ACCESS_TOKEN', 'KEYP_CLIENT_ID', 'APP_DOMAIN'] # any ENV vars that should be available to the web side, see https://redwoodjs.com/docs/environment-variables#web
 [api]
   port = 8911
 [browser]
-  open = true
+  open = false
 [notifications]
   versionUpdates = ["latest"]

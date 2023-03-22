@@ -250,6 +250,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@auth0/auth0-spa-js@npm:^1":
+  version: 1.22.6
+  resolution: "@auth0/auth0-spa-js@npm:1.22.6"
+  dependencies:
+    abortcontroller-polyfill: ^1.7.3
+    browser-tabs-lock: ^1.2.15
+    core-js: ^3.25.4
+    es-cookie: ~1.3.2
+    fast-text-encoding: ^1.0.6
+    promise-polyfill: ^8.2.3
+    unfetch: ^4.2.0
+  checksum: 7f00391a30d1753ca4dee8c88501cd2d26cb064495e9b346b1639608c5135021ffd09f867fb113da561e1e4b7edb767ea031ca376eed467a0f089e76d2a7769c
+  languageName: node
+  linkType: hard
+
 "@babel/cli@npm:7.21.0":
   version: 7.21.0
   resolution: "@babel/cli@npm:7.21.0"
@@ -4230,6 +4245,73 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-spring/animated@npm:~9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/animated@npm:9.7.1"
+  dependencies:
+    "@react-spring/shared": ~9.7.1
+    "@react-spring/types": ~9.7.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: eca2c1c7049fe9ece233c8c723134e53ce5f0468046b34384d07bf3c0890c7d8fc374e8038e71851faa2c559674fe3702e2cdb469d9a78b1e70dad382913b31b
+  languageName: node
+  linkType: hard
+
+"@react-spring/core@npm:~9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/core@npm:9.7.1"
+  dependencies:
+    "@react-spring/animated": ~9.7.1
+    "@react-spring/rafz": ~9.7.1
+    "@react-spring/shared": ~9.7.1
+    "@react-spring/types": ~9.7.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 6de4e1cf2628d3135cc2931a5b2c482daea83e030997c7211b1f24f33c42e0b79248bd1cf11deac0243e220d5f15cb27d1bcd30655c3174bd0d6158bab007738
+  languageName: node
+  linkType: hard
+
+"@react-spring/rafz@npm:~9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/rafz@npm:9.7.1"
+  checksum: 2ece611af1e0b7427c0f865204c76b2b44622dc0f31e8ee7a18d336ad4e14b7cb64c0b4034abf7e80342faa39079b2bf0b59c7f84244cacd24cf2ab67bf7b8c6
+  languageName: node
+  linkType: hard
+
+"@react-spring/shared@npm:~9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/shared@npm:9.7.1"
+  dependencies:
+    "@react-spring/rafz": ~9.7.1
+    "@react-spring/types": ~9.7.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 76158c671b9c01dae96d74523fdd3ea95405859d95878c49d09b42a2d96a3ff87f34f9ee9d3123ddd5124f391003893c0f9bce0274c30bc1382890bc998fe796
+  languageName: node
+  linkType: hard
+
+"@react-spring/types@npm:~9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/types@npm:9.7.1"
+  checksum: 5e7134c244a86c687691bb3347d253a79e649f00752693bf32bb0ba8b3cf6fce19b1feea5c839d147612d94c0ba81161c5cf1e974f2e3d1f724c1a1f2a4b7b4e
+  languageName: node
+  linkType: hard
+
+"@react-spring/web@npm:^9.7.1":
+  version: 9.7.1
+  resolution: "@react-spring/web@npm:9.7.1"
+  dependencies:
+    "@react-spring/animated": ~9.7.1
+    "@react-spring/core": ~9.7.1
+    "@react-spring/shared": ~9.7.1
+    "@react-spring/types": ~9.7.1
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: a733d84d69a0c27199e943156c9838424863a6b377bbbec37d9fda5eb10d8a87f324e4615c2f892c94a4016919d8d0b39d330164aa0013178d53ba29936ca15d
+  languageName: node
+  linkType: hard
+
 "@redwoodjs/api-server@npm:4.3.1":
   version: 4.3.1
   resolution: "@redwoodjs/api-server@npm:4.3.1"
@@ -4260,7 +4342,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@redwoodjs/api@npm:4.3.1":
+"@redwoodjs/api@npm:4.3.1, @redwoodjs/api@npm:^4.3.1":
   version: 4.3.1
   resolution: "@redwoodjs/api@npm:4.3.1"
   dependencies:
@@ -4287,6 +4369,30 @@ __metadata:
     rwfw: dist/bins/rwfw.js
     tsc: dist/bins/tsc.js
   checksum: bccb1278716ca1a12c967c3b9085b943722e4f3cce6942ad9f90b1ddf45f655aa0755efadf3247872dff945a27ae942356fc30f78ace5a8391e9a2eea6fc7a9d
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/auth-auth0-setup@npm:4.3.1":
+  version: 4.3.1
+  resolution: "@redwoodjs/auth-auth0-setup@npm:4.3.1"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    "@redwoodjs/cli-helpers": 4.3.1
+    core-js: 3.29.0
+  checksum: ab31ceba0b9287415de2f97609f2445407077e2807fe1dc3b85d2e23fcf6015c4611b7962bd4387a6d9315e015aa4d039e53660cec8afac81d77db109daef4a1
+  languageName: node
+  linkType: hard
+
+"@redwoodjs/auth-auth0-web@npm:4.3.1":
+  version: 4.3.1
+  resolution: "@redwoodjs/auth-auth0-web@npm:4.3.1"
+  dependencies:
+    "@babel/runtime-corejs3": 7.21.0
+    "@redwoodjs/auth": 4.3.1
+    core-js: 3.29.0
+  peerDependencies:
+    "@auth0/auth0-spa-js": 1.22.6
+  checksum: 27d8aa4acf40d4d949df3a35b510b0e0b1883d86d2f7640bdf81deded6e9696d6970ed084b113ea35a0bb541875d5b38d7c633dc2712aaa597d88f6eab894a04
   languageName: node
   linkType: hard
 
@@ -4760,6 +4866,61 @@ __metadata:
   version: 3.0.4
   resolution: "@repeaterjs/repeater@npm:3.0.4"
   checksum: 9a2928d70f2be4a8f72857f8f7553810015ac970f174b4b20f07289644379af57fa68947601d67e557c1a7c33ddf805e787cf2a1d5e9037ba485d24075a81b6b
+  languageName: node
+  linkType: hard
+
+"@sentry/core@npm:7.43.0":
+  version: 7.43.0
+  resolution: "@sentry/core@npm:7.43.0"
+  dependencies:
+    "@sentry/types": 7.43.0
+    "@sentry/utils": 7.43.0
+    tslib: ^1.9.3
+  checksum: 04377cfb162e2c70931ced2819cbe4d5f1b682545cb55a9c5281082d928e44df4001629652277739cc285a000ebddeed4d258934c655dbdd0d1834002f3c2f42
+  languageName: node
+  linkType: hard
+
+"@sentry/node@npm:^7.43.0":
+  version: 7.43.0
+  resolution: "@sentry/node@npm:7.43.0"
+  dependencies:
+    "@sentry/core": 7.43.0
+    "@sentry/types": 7.43.0
+    "@sentry/utils": 7.43.0
+    cookie: ^0.4.1
+    https-proxy-agent: ^5.0.0
+    lru_map: ^0.3.3
+    tslib: ^1.9.3
+  checksum: 578b80bdffd4c726cb3f9abbe74497939ce461e0a04f5a45ed944cd53385c9841e9c2312b6b4d84a253cd0478acce789da30022766ff7665a92fa6ce7b2b2301
+  languageName: node
+  linkType: hard
+
+"@sentry/tracing@npm:^7.43.0":
+  version: 7.43.0
+  resolution: "@sentry/tracing@npm:7.43.0"
+  dependencies:
+    "@sentry/core": 7.43.0
+    "@sentry/types": 7.43.0
+    "@sentry/utils": 7.43.0
+    tslib: ^1.9.3
+  checksum: 67683a8f6ed7a8e443e3ac24b1c4686d355a0f95bf0a3779e21c812d34b7961d399364d6eb2417bd3d36ee4f22fa5de959cb7aac5a2f4c9dbbb022bf10c2fd71
+  languageName: node
+  linkType: hard
+
+"@sentry/types@npm:7.43.0":
+  version: 7.43.0
+  resolution: "@sentry/types@npm:7.43.0"
+  checksum: c02ac13b4e22e3a65c591d6f79295efdeecadd6f40a4933adf8559ac730caa5686a81c4ca10529fe590051e9562f1ad66dfac353b49c17534898edfabce51161
+  languageName: node
+  linkType: hard
+
+"@sentry/utils@npm:7.43.0":
+  version: 7.43.0
+  resolution: "@sentry/utils@npm:7.43.0"
+  dependencies:
+    "@sentry/types": 7.43.0
+    tslib: ^1.9.3
+  checksum: e2b3769f48e91c1e5327886a1c50ee6d9ce9efd122249cb685cdc8b82829ba0791317e8ece5bf55e619909b5e3fbcdd2652f1590158155093df889b6979fc307
   languageName: node
   linkType: hard
 
@@ -7639,6 +7800,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"abortcontroller-polyfill@npm:^1.7.3":
+  version: 1.7.5
+  resolution: "abortcontroller-polyfill@npm:1.7.5"
+  checksum: d7a5ab6fda4f9a54f22ddeb233a2564d2f4f857ec17be25fee21a91bb5090bee57c630c454634b5c4b93fc06bd90d592d1f2fc69f77cd28791ac0fe361feb7d2
+  languageName: node
+  linkType: hard
+
 "abstract-logging@npm:^2.0.1":
   version: 2.0.1
   resolution: "abstract-logging@npm:2.0.1"
@@ -8009,9 +8177,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "api@workspace:api"
   dependencies:
-    "@redwoodjs/api": 4.3.1
+    "@redwoodjs/api": ^4.3.1
     "@redwoodjs/auth-dbauth-api": 4.3.1
     "@redwoodjs/graphql-server": 4.3.1
+    "@sentry/node": ^7.43.0
+    "@sentry/tracing": ^7.43.0
     pkce-challenge: ^3.0.0
   languageName: unknown
   linkType: soft
@@ -9267,6 +9437,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"browser-tabs-lock@npm:^1.2.15":
+  version: 1.2.15
+  resolution: "browser-tabs-lock@npm:1.2.15"
+  dependencies:
+    lodash: ">=4.17.21"
+  checksum: 6d9243d6ec7da4d48e39d89db53945979433e390c4c9e4342b7f28060d3a40c01220a6cf53bfdd8f49857fb0031865f5b5b843254f40a57762f40e90c75cc68d
+  languageName: node
+  linkType: hard
+
 "browserify-aes@npm:^1.0.0, browserify-aes@npm:^1.0.4":
   version: 1.2.0
   resolution: "browserify-aes@npm:1.2.0"
@@ -10256,10 +10435,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"color-name@npm:^1.1.4, color-name@npm:~1.1.4":
+"color-name@npm:^1.0.0, color-name@npm:^1.1.4, color-name@npm:~1.1.4":
   version: 1.1.4
   resolution: "color-name@npm:1.1.4"
   checksum: a1a3f914156960902f46f7f56bc62effc6c94e84b2cae157a526b1c1f74b677a47ec602bf68a61abfa2b42d15b7c5651c6dbe72a43af720bc588dff885b10f95
+  languageName: node
+  linkType: hard
+
+"color-string@npm:^1.9.0":
+  version: 1.9.1
+  resolution: "color-string@npm:1.9.1"
+  dependencies:
+    color-name: ^1.0.0
+    simple-swizzle: ^0.2.2
+  checksum: b0bfd74c03b1f837f543898b512f5ea353f71630ccdd0d66f83028d1f0924a7d4272deb278b9aef376cacf1289b522ac3fb175e99895283645a2dc3a33af2404
   languageName: node
   linkType: hard
 
@@ -10269,6 +10458,16 @@ __metadata:
   bin:
     color-support: bin.js
   checksum: 8ffeaa270a784dc382f62d9be0a98581db43e11eee301af14734a6d089bd456478b1a8b3e7db7ca7dc5b18a75f828f775c44074020b51c05fc00e6d0992b1cc6
+  languageName: node
+  linkType: hard
+
+"color@npm:^4.2":
+  version: 4.2.3
+  resolution: "color@npm:4.2.3"
+  dependencies:
+    color-convert: ^2.0.1
+    color-string: ^1.9.0
+  checksum: 7fbe7cfb811054c808349de19fb380252e5e34e61d7d168ec3353e9e9aacb1802674bddc657682e4e9730c2786592a4de6f8283e7e0d3870b829bb0b7b2f6118
   languageName: node
   linkType: hard
 
@@ -10558,7 +10757,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cookie@npm:^0.4.2":
+"cookie@npm:^0.4.1, cookie@npm:^0.4.2":
   version: 0.4.2
   resolution: "cookie@npm:0.4.2"
   checksum: beab41fbd7c20175e3a2799ba948c1dcc71ef69f23fe14eeeff59fc09f50c517b0f77098db87dbb4c55da802f9d86ee86cdc1cd3efd87760341551838d53fca2
@@ -10635,7 +10834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"core-js@npm:^3.0.4, core-js@npm:^3.26.0, core-js@npm:^3.6.5, core-js@npm:^3.8.2":
+"core-js@npm:^3.0.4, core-js@npm:^3.25.4, core-js@npm:^3.26.0, core-js@npm:^3.6.5, core-js@npm:^3.8.2":
   version: 3.29.1
   resolution: "core-js@npm:3.29.1"
   checksum: e5fb4a18148e76a136b5c90d994715e15ed0e42cf0f073429174204bd119f1ba81dc582fff450e3792b73825cd1fe234ad76f85567ba7943039f5842be02591c
@@ -11020,6 +11219,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"css-selector-tokenizer@npm:^0.8.0":
+  version: 0.8.0
+  resolution: "css-selector-tokenizer@npm:0.8.0"
+  dependencies:
+    cssesc: ^3.0.0
+    fastparse: ^1.1.2
+  checksum: 86f68cc666d41f9d153351677694002a9d00e2609e6abc66fcfd7f580be3d6ecc0929e46a06c621ab28da5febbb54567db9709b819414edae4a36d9ff9133e16
+  languageName: node
+  linkType: hard
+
 "css-tree@npm:^1.1.2, css-tree@npm:^1.1.3":
   version: 1.1.3
   resolution: "css-tree@npm:1.1.3"
@@ -11173,6 +11382,21 @@ __metadata:
   version: 1.0.1
   resolution: "cyclist@npm:1.0.1"
   checksum: 3381d3b66a3b268e6e0abcc1fa8fbeeb9a98391d8455677509f9833813d7680cc737a10141f54c229e42f5b3133250f36f1aa04f56ef4ba9b29fa728c3c48c01
+  languageName: node
+  linkType: hard
+
+"daisyui@npm:^2.51.4":
+  version: 2.51.4
+  resolution: "daisyui@npm:2.51.4"
+  dependencies:
+    color: ^4.2
+    css-selector-tokenizer: ^0.8.0
+    postcss-js: ^4.0.0
+    tailwindcss: ^3
+  peerDependencies:
+    autoprefixer: ^10.0.2
+    postcss: ^8.1.6
+  checksum: 00e85f7107a88ef724d8a9f4878652a28c569b154e7dd112765cf46e6aec3bd4ac1bb4c31137f972f76cb8fff9145607762f3bf77ed4a703d0a388f0c66e501a
   languageName: node
   linkType: hard
 
@@ -12186,6 +12410,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"es-cookie@npm:~1.3.2":
+  version: 1.3.2
+  resolution: "es-cookie@npm:1.3.2"
+  checksum: 26eb6e06b25b5569d8763fcb23b5335a5098e354b0a9a7bc5122e8c8705003307187a165ddaeda5cff08fa4cc8e1675dbddd5709279fb27cfa8875514dc3eccb
+  languageName: node
+  linkType: hard
+
 "es-get-iterator@npm:^1.0.2, es-get-iterator@npm:^1.1.2":
   version: 1.1.3
   resolution: "es-get-iterator@npm:1.1.3"
@@ -13074,6 +13305,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fast-text-encoding@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "fast-text-encoding@npm:1.0.6"
+  checksum: e1d0381bda229c92c7906f63308f3b9caca8c78b732768b1ee16f560089ed21bc159bbe1434138ccd3815931ec8d4785bdade1ad1c45accfdf27ac6606ac67d2
+  languageName: node
+  linkType: hard
+
 "fast-uri@npm:^2.0.0, fast-uri@npm:^2.1.0, fast-uri@npm:^2.2.0":
   version: 2.2.0
   resolution: "fast-uri@npm:2.2.0"
@@ -13142,6 +13380,13 @@ __metadata:
     semver: ^7.3.7
     tiny-lru: ^10.0.0
   checksum: 1e75cd10ae6de7e88554bd6e41bad4e79c895b0f36ab65d75cf3c08d2445313f65128870d67312fd954b194f21928e4585ad368c52e8aaaa23c89dc237eb64dc
+  languageName: node
+  linkType: hard
+
+"fastparse@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "fastparse@npm:1.1.2"
+  checksum: c08d6e7ef10c0928426c1963dd4593e2baaf44d223ab1e5ba5d7b30470144b3a4ecb3605958b73754cea3f857ecef00b67c885f07ca2c312b38b67d9d88b84b5
   languageName: node
   linkType: hard
 
@@ -15248,6 +15493,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-arrayish@npm:^0.3.1":
+  version: 0.3.2
+  resolution: "is-arrayish@npm:0.3.2"
+  checksum: f59b43dc1d129edb6f0e282595e56477f98c40278a2acdc8b0a5c57097c9eff8fe55470493df5775478cf32a4dc8eaf6d3a749f07ceee5bc263a78b2434f6a54
+  languageName: node
+  linkType: hard
+
 "is-bigint@npm:^1.0.1":
   version: 1.0.4
   resolution: "is-bigint@npm:1.0.4"
@@ -17314,7 +17566,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:4.17.21, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:~4.17.0":
+"lodash@npm:4.17.21, lodash@npm:>=4.17.21, lodash@npm:^4.17.14, lodash@npm:^4.17.15, lodash@npm:^4.17.19, lodash@npm:^4.17.20, lodash@npm:^4.17.21, lodash@npm:~4.17.0":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: d8cbea072bb08655bb4c989da418994b073a608dffa608b09ac04b43a791b12aeae7cd7ad919aa4c925f33b48490b5cfe6c1f71d827956071dae2e7bb3a6b74c
@@ -17446,6 +17698,13 @@ __metadata:
   version: 7.18.3
   resolution: "lru-cache@npm:7.18.3"
   checksum: b3a452b491433db885beed95041eb104c157ef7794b9c9b4d647be503be91769d11206bb573849a16b4cc0d03cbd15ffd22df7960997788b74c1d399ac7a4fed
+  languageName: node
+  linkType: hard
+
+"lru_map@npm:^0.3.3":
+  version: 0.3.3
+  resolution: "lru_map@npm:0.3.3"
+  checksum: d861f14a142a4a74ebf8d3ad57f2e768a5b820db4100ae53eed1a64eb6350912332e6ebc87cb7415ad6d0cd8f3ce6d20beab9a5e6042ccb5996ea0067a220448
   languageName: node
   linkType: hard
 
@@ -20457,6 +20716,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"promise-polyfill@npm:^8.2.3":
+  version: 8.3.0
+  resolution: "promise-polyfill@npm:8.3.0"
+  checksum: 97141f07a31a6be135ec9ed53700a3423a771cabec0ba5e08fcb2bf8cfda855479ff70e444fceb938f560be42b450cd032c14f4a940ed2ad1e5b4dcb78368dce
+  languageName: node
+  linkType: hard
+
 "promise-retry@npm:^2.0.1":
   version: 2.0.1
   resolution: "promise-retry@npm:2.0.1"
@@ -21681,6 +21947,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@redwoodjs/auth-auth0-setup": 4.3.1
     "@redwoodjs/auth-dbauth-setup": 4.3.1
     "@redwoodjs/core": 4.3.1
     prettier-plugin-tailwindcss: ^0.2.5
@@ -22069,6 +22336,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"serverless-http@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "serverless-http@npm:3.2.0"
+  checksum: 05f383dbb9ef9e861c0837a7c891fed935dc2af140d1f43deab1921e5fac3a55224ef53dfb026d3d81f29320568e6fc00112c9f31446f961aea3502aa48e2469
+  languageName: node
+  linkType: hard
+
 "set-blocking@npm:^2.0.0":
   version: 2.0.0
   resolution: "set-blocking@npm:2.0.0"
@@ -22219,6 +22493,15 @@ __metadata:
   version: 1.0.0
   resolution: "signedsource@npm:1.0.0"
   checksum: dbb4ade9c94888e83c16d23ef1a43195799de091d366d130be286415e8aeb97b3f25b14fd26fc5888e1335d703ad561374fddee32e43b7cea04751b93d178a47
+  languageName: node
+  linkType: hard
+
+"simple-swizzle@npm:^0.2.2":
+  version: 0.2.2
+  resolution: "simple-swizzle@npm:0.2.2"
+  dependencies:
+    is-arrayish: ^0.3.1
+  checksum: df5e4662a8c750bdba69af4e8263c5d96fe4cd0f9fe4bdfa3cbdeb45d2e869dff640beaaeb1ef0e99db4d8d2ec92f85508c269f50c972174851bc1ae5bd64308
   languageName: node
   linkType: hard
 
@@ -23137,7 +23420,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.7":
+"tailwindcss@npm:^3, tailwindcss@npm:^3.2.7":
   version: 3.2.7
   resolution: "tailwindcss@npm:3.2.7"
   dependencies:
@@ -23740,7 +24023,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tslib@npm:^1.8.1, tslib@npm:^1.9.2":
+"tslib@npm:^1.8.1, tslib@npm:^1.9.2, tslib@npm:^1.9.3":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: 69ae09c49eea644bc5ebe1bca4fa4cc2c82b7b3e02f43b84bd891504edf66dbc6b2ec0eef31a957042de2269139e4acff911e6d186a258fb14069cd7f6febce2
@@ -24682,6 +24965,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
+    "@auth0/auth0-spa-js": ^1
+    "@react-spring/web": ^9.7.1
+    "@redwoodjs/auth-auth0-web": 4.3.1
     "@redwoodjs/auth-dbauth-web": 4.3.1
     "@redwoodjs/forms": 4.3.1
     "@redwoodjs/router": 4.3.1
@@ -24691,6 +24977,7 @@ __metadata:
     "@tailwindcss/line-clamp": ^0.4.2
     "@tailwindcss/typography": ^0.5.9
     autoprefixer: ^10.4.14
+    daisyui: ^2.51.4
     humanize-string: 2.1.0
     oauth2-server-redwood: ^0.3.13
     postcss: ^8.4.21
@@ -24698,6 +24985,7 @@ __metadata:
     prop-types: 15.8.1
     react: 17.0.2
     react-dom: 17.0.2
+    serverless-http: ^3.2.0
     tailwindcss: ^3.2.7
   languageName: unknown
   linkType: soft
