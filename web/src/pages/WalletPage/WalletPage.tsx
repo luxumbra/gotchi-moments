@@ -5,7 +5,7 @@ const WalletPage = () => {
     <>
       <MetaTags title="Wallet" description="Wallet page" />
 
-      <h1>WalletPage</h1>
+      <h1 className="text-6xl">WalletPage</h1>
     </>
   )
 }

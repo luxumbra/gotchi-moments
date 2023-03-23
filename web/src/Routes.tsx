@@ -35,14 +35,13 @@ const Routes = () => {
           <Route notfound page={NotFoundPage} />
         </Set>
         <Set wrap={AppLayout}>
-          <Private unauthenticated="login">
-            <Route path="/profile" page={ProfilePage} name="profile" />
-            <Route path="/message" page={MessagePage} name="message" />
-            <Route path="/messages" page={MessagesPage} name="messages" />
-            <Route path="/chatroom" page={ChatroomPage} name="chatroom" />
-            <Route path="/selfie" page={SelfiePage} name="selfie" />
-            <Route path="/wallet" page={WalletPage} name="wallet" />
-          </Private>
+          <Route path="/profile" page={ProfilePage} name="profile" />
+          <Route path="/message" page={MessagePage} name="message" />
+          <Route path="/messages" page={MessagesPage} name="messages" />
+          <Route path="/chatroom" page={ChatroomPage} name="chatroom" />
+          <Route path="/selfie" page={SelfiePage} name="selfie" />
+          <Route path="/wallet" page={WalletPage} name="wallet" />
+          {/* <Private unauthenticated="login"></Private> */}
         </Set>
       </AllContextProviders>
     </Router>

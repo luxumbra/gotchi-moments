@@ -53,7 +53,7 @@ export default RedwoodDevFatalErrorPage ||
         }}
       />
       <section>
-        <h1>
+        <h1 className="text-6xl">
           <span>Something went wrong</span>
         </h1>
       </section>

@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       <MetaTags title="Home" description="Home page" />
 
-      <h1 className="font-display text-5xl">Welcome to GotchiMoments</h1>
+      <h1 className="font-display text-6xl">Welcome to GotchiMoments</h1>
       <p>Make, mint & share special moments with your Gotchi frens!</p>
       <p>{JSON.stringify({ isAuthenticated })}</p>
     </>

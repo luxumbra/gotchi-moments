@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <>
       <MetaTags title="404 Page Not Found" />
 
-      <h1>404 Page Not Found</h1>
+      <h1 className="text-6xl">404 Page Not Found</h1>
       <p>Make & share memories with your Gotchi frens!</p>
       <p>{JSON.stringify({ isAuthenticated })}</p>
     </>

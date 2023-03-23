@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .site-header {
+    @apply flex flex-row justify-center items-center p-4 fixed w-full;
+    @apply  bg-fuchsia-600  text-2xl;
+
+  }
+  .site-header__wrapper {
+    @apply flex flex-row justify-between items-center w-11/12;
+  }
+
+  .site-header nav {
+    @apply flex flex-row justify-between items-center;
+  }
+
+}

@@ -22,6 +22,8 @@ module.exports = {
       fontFamily: {
         inter: 'Inter',
         display: '"Baloo 2", cursive',
+        sans: 'Pixelar, sans-serif',
+        body: 'Pixelar, sans-serif',
       },
       screens: {
         xs: '530px',

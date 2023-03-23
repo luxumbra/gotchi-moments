@@ -1,0 +1,8 @@
+/* import the fonts from `../fonts/` in a font-face declaration */
+
+@font-face {
+  font-family:"Pixelar";
+  src: url("../fonts/PixelarRegular.woff2") format("woff");
+  font-weight:normal;
+  font-style:normal;
+}

@@ -1,6 +1,6 @@
 import Footer from 'src/components/Footer/Footer'
 import Header from 'src/components/Header/Header'
-
+import 'src/lib/assets/styles/index.css'
 import 'src/index.css'
 
 type DefaultLayoutProps = {

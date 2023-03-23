@@ -5,7 +5,7 @@ const MessagePage = () => {
     <>
       <MetaTags title="Message" description="Message page" />
 
-      <h1>MessagePage</h1>
+      <h1 className="text-6xl">MessagePage</h1>
     </>
   )
 }

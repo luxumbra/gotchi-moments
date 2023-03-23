@@ -12,7 +12,11 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold text-zinc-400;
+    @apply font-display font-bold text-fuchsia-200 text-6xl;
+  }
+
+  h1 {
+    @apply text-7xl;
   }
 
   ::-webkit-scrollbar {
@@ -29,7 +33,7 @@
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    @apply bg-fuchsia-500 opacity-70;
+    @apply bg-violet-500 opacity-70;
 
     border-radius: 2px;
     box-shadow: 0 0 5px rgb(0 0 0 / 70%);
@@ -41,26 +45,10 @@
   }
 }
 
-@layer components {
-  .site-header {
-    @apply flex flex-row justify-center items-center p-4 bg-zinc-700  text-lg fixed w-full;
-
-  }
-  .site-header__wrapper {
-    @apply flex flex-row justify-between items-center w-11/12;
-  }
-
-  .site-header nav {
-    @apply flex flex-row justify-between items-center;
-  }
-  .site-header nav ul {
-    @apply flex flex-row justify-between items-center list-none gap-6;
-  }
-}
 
 @layer utilities {
   .font-display {
-    font-family: '"Baloo 2', sans-serif;
+    font-family: 'Pixelar', sans-serif;
   }
 }
 

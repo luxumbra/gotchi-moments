@@ -5,7 +5,7 @@ const ChatroomPage = () => {
     <>
       <MetaTags title="Chatroom" description="Chatroom page" />
 
-      <h1>ChatroomPage</h1>
+      <h1 className="text-6xl">ChatroomPage</h1>
     </>
   )
 }

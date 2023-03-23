@@ -62,12 +62,12 @@ const LoginPortal = () => {
   return (
     <div className="flex justify-center">
       <div className="login-portal-container w-80 sm:w-96">
-        <h2 className="text-center text-2xl font-extrabold tracking-tight text-zinc-200 sm:text-3xl md:text-3xl">
+        <h1 className="text-center text-6xl">
           <span className="block xl:inline">Login with Keyp</span>
-        </h2>
+        </h1>
         <div className="mt-6">
           <div className="mb-6">
-            <h2 className="color-grey-light text-center text-base font-bold">
+            <h2 className="text-center text-4xl font-bold text-zinc-400">
               Sign in
             </h2>
           </div>
