@@ -4,11 +4,11 @@
 
 @layer base {
   html {
-    @apply font-sans bg-zinc-800;
+    @apply font-sans bg-fuchsia-500;
   }
 
   body {
-    @apply min-h-screen overflow-x-hidden text-zinc-100 bg-zinc-800;
+    @apply min-h-screen overflow-x-hidden text-zinc-100 bg-fuchsia-500;
   }
 
   h1, h2, h3, h4, h5, h6 {

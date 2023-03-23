@@ -22,3 +22,13 @@ export const getErrorResponse = (error, functionName) => {
   }
   return { error: res }
 }
+
+/**
+ * shorten wallet address for display
+ * @param {string} address
+ * @param {number} [length=4]
+ * @returns {string}
+ */
+export const shortenAddress = (address, length = 4) => {
+  return `${address.slice(0, length + 2)}...${address.slice(-length)}`
+}
