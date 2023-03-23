@@ -1,21 +1,25 @@
-import { useEffect } from 'react'
-
 import { useCopyToClipboard } from 'usehooks-ts'
 
 import { MetaTags } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
+import successSound from 'src/lib/assets/sounds/interactions/success.mp3'
 import { shortenAddress } from 'src/utils/helpers'
 
 const ProfilePage = () => {
   const address = '0xd669da4a797f226cbe4922f73e758be8d47f9a49'
   const displayAddress = shortenAddress(address)
   const [value, copy] = useCopyToClipboard()
+  const playSound = (sound) => {
+    const audio = new Audio(sound)
+    audio.play()
+  }
 
   const copyAddress = (data) => {
     copy(data)
     if (value) {
       toast.success('Copied to clipboard')
+      playSound(successSound)
     }
   }
 

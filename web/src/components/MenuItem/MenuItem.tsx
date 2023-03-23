@@ -29,7 +29,7 @@ const MenuItem = ({ route, name, i, toggle }) => {
       className="text-center"
       variants={variants}
       whileHover={{ scale: 1.2, rotate: i % 2 === 0 ? '12deg' : '-12deg' }}
-      whileTap={{ scale: 0.95 }}
+      whileTap={{ scale: 0.95, rotate: i % 2 === 0 ? '12deg' : '-12deg' }}
     >
       <Link to={route} className={style} onClick={() => toggle()}>
         {name}

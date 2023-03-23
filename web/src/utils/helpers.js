@@ -32,3 +32,8 @@ export const getErrorResponse = (error, functionName) => {
 export const shortenAddress = (address, length = 4) => {
   return `${address.slice(0, length + 2)}...${address.slice(-length)}`
 }
+
+export const playSound = (sound) => {
+  const audio = new Audio(sound)
+  audio.play()
+}

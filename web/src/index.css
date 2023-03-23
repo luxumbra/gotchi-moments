@@ -1,22 +1,39 @@
+/**
+ * START --- SETUP TAILWINDCSS EDIT
+ *
+ * `yarn rw setup ui tailwindcss` placed these imports here
+ * to inject Tailwind's styles into your CSS.
+ * For more information, see: https://tailwindcss.com/docs/installation#include-tailwind-in-your-css
+ */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+/**
+ * END --- SETUP TAILWINDCSS EDIT
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   html {
-    @apply font-sans bg-fuchsia-500;
+    @apply font-sans bg-zinc-900;
   }
 
   body {
-    @apply min-h-screen overflow-x-hidden text-zinc-100 bg-fuchsia-500;
+    @apply min-h-screen overflow-x-hidden text-zinc-100 bg-zinc-900;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold text-fuchsia-200 text-6xl;
+    @apply font-display font-bold text-gotchi-purple text-6xl;
   }
 
   h1 {
     @apply text-7xl;
+  }
+
+  p {
+    @apply text-2xl text-zinc-400;
   }
 
   ::-webkit-scrollbar {
@@ -47,8 +64,5 @@
 
 
 @layer utilities {
-  .font-display {
-    font-family: 'Pixelar', sans-serif;
-  }
 }
 

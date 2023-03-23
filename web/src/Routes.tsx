@@ -41,6 +41,7 @@ const Routes = () => {
           <Route path="/chatroom" page={ChatroomPage} name="chatroom" />
           <Route path="/selfie" page={SelfiePage} name="selfie" />
           <Route path="/wallet" page={WalletPage} name="wallet" />
+          <Route path="/friends" page={FriendsPage} name="friends" />
           {/* <Private unauthenticated="login"></Private> */}
         </Set>
       </AllContextProviders>

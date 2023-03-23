@@ -4,8 +4,8 @@
 
 @layer components {
   .site-header {
-    @apply flex flex-row justify-center items-center p-4 fixed w-full;
-    @apply  bg-fuchsia-600  text-2xl;
+    @apply flex flex-row justify-center items-center py-4 fixed w-full;
+    @apply  bg-gotchi-pink  text-3xl;
 
   }
   .site-header__wrapper {
