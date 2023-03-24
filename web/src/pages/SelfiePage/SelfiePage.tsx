@@ -5,7 +5,9 @@ const SelfiePage = () => {
     <>
       <MetaTags title="Selfie" description="Selfie page" />
 
-      <h1 className="text-6xl">SelfiePage</h1>
+      <div className="container mx-auto w-11/12 py-28">
+        <h1 className="text-3xl lg:text-6xl">Take a selfie</h1>
+      </div>
     </>
   )
 }

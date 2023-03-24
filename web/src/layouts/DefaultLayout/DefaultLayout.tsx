@@ -11,9 +11,7 @@ const DefaultLayout = ({ children }: DefaultLayoutProps) => {
   return (
     <>
       <Header />
-      <main className="flex min-h-screen w-full">
-        <div className="container mx-auto py-24">{children}</div>
-      </main>
+      <main className="flex z-0 min-h-full w-full">{children}</main>
 
       <Footer />
     </>

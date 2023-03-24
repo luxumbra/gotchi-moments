@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 
 import popSound from 'src/lib/assets/sounds/interactions/pop.mp3'
 import { playSound } from 'src/utils/helpers'
+
 const Path = (props) => (
   <motion.path
     fill="transparent"
@@ -24,14 +25,14 @@ const MenuToggle = ({ toggle }) => {
   return (
     <motion.button
       onClick={toggle}
-      className="relative z-50 origin-center"
+      className="relative z-[100] border"
       variants={{
         open: { rotate: 180, y: -7 },
         closed: { rotate: 0, y: 0 },
       }}
       transition={{ duration: 0.2 }}
     >
-      <svg width="36" height="26" viewBox="0 0 26 26">
+      <svg width="26" height="26" viewBox="0 0 26 26">
         <Path
           variants={{
             closed: { d: 'M 2 2.5 L 20 2.5' },

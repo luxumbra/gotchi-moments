@@ -52,7 +52,7 @@ const LoginPortal = () => {
   const getButton = (type, text) => (
     <button
       onClick={() => onSubmitSignUp(type)}
-      className="btn btn-primary mt-2"
+      className="btn-primary btn-md btn mt-2 w-full max-w-sm text-lg lg:text-2xl"
       type="button"
     >
       {text}
@@ -60,28 +60,26 @@ const LoginPortal = () => {
   )
 
   return (
-    <div className="flex justify-center">
-      <div className="login-portal-container w-80 sm:w-96">
-        <h1 className="text-center text-6xl">
-          <span className="block xl:inline">Login with Keyp</span>
-        </h1>
-        <div className="mt-6">
-          <div className="mb-6">
-            <h2 className="text-center text-4xl font-bold text-zinc-400">
-              Sign in
-            </h2>
-          </div>
+    <div className="container mx-auto w-11/12 py-28">
+      <h1 className="text-center text-3xl lg:text-6xl">
+        <span className="block xl:inline">Login with Keyp</span>
+      </h1>
+      <div className="mt-6 w-full">
+        <div className="mb-6">
+          <h2 className="text-center text-2xl font-bold text-zinc-400 lg:text-4xl">
+            Sign in
+          </h2>
         </div>
+      </div>
 
-        <div className="login-portal-container--button-wrapper text-center ">
-          <ul className="flex flex-col space-y-6">
-            <li>{getButton('KEYP_KEYP', 'Keyp')}</li>
-            <li>{getButton('KEYP_DISCORD', 'Discord')} </li>
-            {/* <li>{getButton('KEYP_GITHUB', 'Github')} </li> */}
-            <li>{getButton('KEYP_TWITTER', 'Twitter')} </li>
-          </ul>
-          {errorText && <div className="rw-cell-error mt-2">{errorText}</div>}
-        </div>
+      <div className="flex mx-auto w-full justify-center text-center">
+        <ul className="flex w-full flex-col items-center  justify-center  space-y-2 lg:space-y-6">
+          <li className="w-full">{getButton('KEYP_KEYP', 'Keyp')}</li>
+          <li className="w-full">{getButton('KEYP_DISCORD', 'Discord')} </li>
+          {/* <li>{getButton('KEYP_GITHUB', 'Github')} </li> */}
+          <li className="w-full">{getButton('KEYP_TWITTER', 'Twitter')} </li>
+        </ul>
+        {errorText && <div className="rw-cell-error mt-2">{errorText}</div>}
       </div>
     </div>
   )

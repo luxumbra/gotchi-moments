@@ -16,13 +16,9 @@ import './Header.css'
 
 const menuVariants = {
   open: {
-    y: 0,
-    z: 50,
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
-    y: -1500,
-    z: -1,
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 }
@@ -42,6 +38,7 @@ const sidebar = {
   open: (height = 1000) => ({
     clipPath: `circle(${height * 2 + 200}px at 110px 0px)`,
     width: '100%',
+    display: 'block',
     transition: {
       type: 'spring',
       stiffness: 20,
@@ -50,6 +47,9 @@ const sidebar = {
   }),
   closed: {
     clipPath: 'circle(30px at 110px 0px)',
+    transitionEnd: {
+      display: 'none',
+    },
     transition: {
       delay: 0.5,
       type: 'spring',
@@ -83,31 +83,29 @@ const Header = () => {
 
   return (
     <>
-      <header className="site-header z-10 overflow-y-visible font-display capitalize">
+      <header className="site-header z-50 overflow-y-visible font-display capitalize">
         <div className="site-header__wrapper">
           <div>
             <Link to={routes.home()} title="GotchiMoments">
               GM
             </Link>
           </div>
-        </div>
-      </header>
-      <motion.nav
-        className="absolute top-0 left-auto z-50 min-h-full w-full py-4 text-center text-3xl"
-        initial={false}
-        animate={isOpen ? 'open' : 'closed'}
-        custom={height}
-      >
-        <div className="site-header__container flex mx-auto w-11/12 justify-between font-display">
-          <div>
-            <Link to={routes.home()} title="GotchiMoments">
-              GM
-            </Link>
-          </div>
           <MenuToggle toggle={() => toggleOpen()} />
+        </div>
+        <motion.nav
+          className="flex absolute top-0 left-auto z-40 min-h-full w-full items-center justify-center py-4 text-center text-3xl"
+          initial={false}
+          variants={{
+            open: { opacity: 1, y: 0, display: 'flex' },
+            closed: { opacity: 0, y: -200, transitionEnd: { display: 'none' } },
+          }}
+          transition={{ duration: 0.2, delay: 0.3, ease: 'easeInOut' }}
+          animate={isOpen ? 'open' : 'closed'}
+          custom={height}
+        >
           <motion.ul
             variants={menuVariants}
-            className="flex fixed top-[25%] right-1/2 flex-col gap-5"
+            className="flex mx-auto w-1/12 flex-col gap-5"
           >
             {navItems.map((item, i) => {
               const route = routes[item.path]()
@@ -126,8 +124,8 @@ const Header = () => {
               )
             })}
           </motion.ul>
-        </div>
-      </motion.nav>
+        </motion.nav>
+      </header>
       <motion.div
         className="background pointer-events-none absolute top-0 left-0 right-0 bottom-0 z-40 w-full origin-left bg-gotchi-pink"
         animate={isOpen ? 'open' : 'closed'}

@@ -33,9 +33,7 @@ const AppLayout = ({ children }: AppLayoutProps) => {
     <>
       <Header />
 
-      <main className="flex z-0 min-h-full w-full">
-        <div className="container mx-auto py-24">{children}</div>
-      </main>
+      <main className="flex z-0 min-h-full w-full flex-col">{children}</main>
 
       <Footer />
     </>
