@@ -16,15 +16,19 @@ const Path = (props) => (
 )
 
 const MenuToggle = ({ toggle }) => {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      toggle && playSound(popSound)
-    }
-  }, [toggle])
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     toggle && playSound(popSound)
+  //   }
+  // }, [toggle])
+
+  const handleClick = () => {
+    playSound(popSound)
+  }
 
   return (
     <motion.button
-      onClick={toggle}
+      onClick={() => (handleClick(), toggle())}
       className="relative z-[100] border"
       variants={{
         open: { rotate: 180, y: -7 },

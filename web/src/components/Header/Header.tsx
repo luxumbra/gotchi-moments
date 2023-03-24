@@ -9,9 +9,7 @@ import { useAuth } from 'src/auth'
 import MenuItem from 'src/components/MenuItem/MenuItem'
 import MenuToggle from 'src/components/MenuToggle/MenuToggle'
 import { useDimensions } from 'src/hooks/useDimensions'
-import clickSound from 'src/lib/assets/sounds/interactions/click.mp3'
-import popSound from 'src/lib/assets/sounds/interactions/pop.mp3'
-import { playSound } from 'src/utils/helpers'
+
 import './Header.css'
 
 const menuVariants = {
@@ -64,22 +62,6 @@ const Header = () => {
   const [isOpen, toggleOpen] = useCycle(false, true)
   const containerRef = useRef(null)
   const height = useDimensions(containerRef)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    const links = document.querySelectorAll('.menu-item')
-    links.forEach((link, i) => {
-      link.addEventListener('click', () => {
-        i % 2 === 0 ? playSound(clickSound) : playSound(popSound)
-      })
-    })
-
-    return () => {
-      links.forEach((link) => {
-        link.removeEventListener('mouseenter', () => {})
-      })
-    }
-  }, [])
 
   return (
     <>

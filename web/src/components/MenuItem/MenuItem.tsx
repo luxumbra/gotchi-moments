@@ -3,6 +3,9 @@ import { v4 as uuidv4 } from 'uuid'
 
 import { Link } from '@redwoodjs/router'
 
+import clickSound from 'src/lib/assets/sounds/interactions/click.mp3'
+import { playSound } from 'src/utils/helpers'
+
 const variants = {
   open: {
     y: 0,
@@ -22,6 +25,9 @@ const variants = {
 
 const MenuItem = ({ route, name, i, toggle }) => {
   const style = `menu-item__${i} menu-item inline-flex items-center text-3xl border-2 px-3 py-2 border-transparent text-center hover:border-fuchsia-300`
+  const handleClick = () => {
+    playSound(clickSound)
+  }
 
   return (
     <motion.li
@@ -31,7 +37,11 @@ const MenuItem = ({ route, name, i, toggle }) => {
       whileHover={{ scale: 1.2, rotate: i % 2 === 0 ? '12deg' : '-12deg' }}
       whileTap={{ scale: 0.95, rotate: i % 2 === 0 ? '12deg' : '-12deg' }}
     >
-      <Link to={route} className={style} onClick={() => toggle()}>
+      <Link
+        to={route}
+        className={style}
+        onClick={() => (handleClick(), toggle())}
+      >
         {name}
       </Link>
     </motion.li>
