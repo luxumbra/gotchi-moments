@@ -75,7 +75,7 @@ const Header = () => {
           <MenuToggle toggle={() => toggleOpen()} />
         </div>
         <motion.nav
-          className="flex absolute top-0 left-auto z-40 min-h-full w-full items-center justify-center py-4 text-center text-3xl"
+          className="flex absolute top-1/4 left-auto z-40 min-h-full w-full items-center justify-center py-4 text-center text-3xl"
           initial={false}
           variants={{
             open: { opacity: 1, y: 0, display: 'flex' },
@@ -87,7 +87,7 @@ const Header = () => {
         >
           <motion.ul
             variants={menuVariants}
-            className="flex mx-auto w-1/12 flex-col gap-5"
+            className="flex mx-auto w-11/12 flex-col gap-2 lg:w-1/12 lg:gap-5"
           >
             {navItems.map((item, i) => {
               const route = routes[item.path]()

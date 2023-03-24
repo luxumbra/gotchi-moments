@@ -8,10 +8,11 @@ const HomePage = () => {
   return (
     <>
       <MetaTags title="Home" description="Home page" />
-
-      <h1 className="font-display text-6xl">Welcome to GotchiMoments</h1>
-      <p>Make, mint & share special moments with your Gotchi frens!</p>
-      <p>{JSON.stringify({ isAuthenticated })}</p>
+      <div className="container mx-auto w-11/12 py-28">
+        <h1 className="font-display text-6xl">Welcome to GotchiMoments</h1>
+        <p>Make, mint & share special moments with your Gotchi frens!</p>
+        <p>{JSON.stringify({ isAuthenticated })}</p>
+      </div>
     </>
   )
 }
