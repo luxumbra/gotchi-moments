@@ -17,4 +17,4 @@
 [browser]
   open = false
 [notifications]
-  versionUpdates = ["latest"]
+  versionUpdates = ["major", "minor", "patch"]
