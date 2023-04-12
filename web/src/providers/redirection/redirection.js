@@ -1,7 +1,7 @@
-import { useAuth } from 'src/auth'
 import { isBrowser } from '@redwoodjs/prerender/browserUtils'
 import { routes } from '@redwoodjs/router'
 
+import { useAuth } from 'src/auth'
 import { useOAuth } from 'src/providers/oAuth'
 
 const LOCAL_REDIRECT_TO_KEY = 'redirect_to'
@@ -33,7 +33,7 @@ const RedirectionContext = React.createContext({
 
 const RedirectionProvider = ({ children }) => {
   const [state, setState] = React.useState({ isLoading: true })
-  console.log('RedirectionProvider', {state});
+  console.log('RedirectionProvider', { state })
   const { logIn } = useAuth()
   const { submitCodeGrant } = useOAuth()
 
@@ -47,7 +47,7 @@ const RedirectionProvider = ({ children }) => {
   let type
 
   if (isBrowser) {
-    console.log('isBrowser');
+    console.log('isBrowser')
     url = new URL(window.location.href) // Support prerender
     code = url.searchParams.get('code')
     grantState = url.searchParams.get('state')
@@ -58,7 +58,7 @@ const RedirectionProvider = ({ children }) => {
   }
 
   const submitLoginCodeGrant = async () => {
-    console.log('submitLoginCodeGrant');
+    console.log('submitLoginCodeGrant')
     const response = await logIn({
       code,
       state: grantState,
@@ -75,13 +75,13 @@ const RedirectionProvider = ({ children }) => {
       successMessage: "Great - You're signed in!",
     })
     setTimeout(() => {
-      console.log('redirecting to profile...');
+      console.log('redirecting to profile...')
       window.location = routes.profile()
     }, [3000])
   }
 
   const completeOAuth = async () => {
-    console.log('completeOAuth');
+    console.log('completeOAuth')
     const { error: codeGrantError, successMessage: successMessageCodeGrant } =
       await submitCodeGrant({ code, grantState, type })
     if (codeGrantError)
@@ -124,7 +124,7 @@ const RedirectionProvider = ({ children }) => {
   }
 
   React.useEffect(() => {
-    console.log('useEffect');
+    console.log('useEffect')
     if (!isBrowser) return
     if (!url.pathname.includes('/redirect')) return
     if (type === 'wyre') return completeWyreOrder()
@@ -140,19 +140,27 @@ const RedirectionProvider = ({ children }) => {
         isLoading: false,
         errorMessage: 'Invalid redirect parameters',
       })
-    if (APPROVED_LOGIN_PROVIDERS.includes(type.toUpperCase()))
-      console.log('APPROVED_LOGIN_PROVIDERS');
+
+    if (APPROVED_LOGIN_PROVIDERS.includes(type.toUpperCase())) {
+      console.log('APPROVED_LOGIN_PROVIDERS')
+
       return submitLoginCodeGrant()
+    }
+
+    completeOAuth()
+
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [code, grantState])
 
   return (
-    <RedirectionContext.Provider value={{
-      isLoading: state.isLoading,
-      successMessage: state.successMessage,
-      errorMessage: state.errorMessage,
-      orderSubmitted: state.orderSubmitted
-    }}>
+    <RedirectionContext.Provider
+      value={{
+        isLoading: state.isLoading,
+        successMessage: state.successMessage,
+        errorMessage: state.errorMessage,
+        orderSubmitted: state.orderSubmitted,
+      }}
+    >
       {children}
     </RedirectionContext.Provider>
   )

@@ -1,12 +1,3 @@
-// In this file, all Page components from 'src/pages` are auto-imported. Nested
-// directories are supported, and should be uppercase. Each subdirectory will be
-// prepended onto the component name.
-//
-// Examples:
-//
-// 'src/pages/HomePage/HomePage.js'         -> HomePage
-// 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
-
 import { Router, Route, Set, Private } from '@redwoodjs/router'
 
 import { useAuth } from 'src/auth'
@@ -32,18 +23,17 @@ const Routes = () => {
           <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
           <Route path="/login" page={LoginPage} name="login" />
           <Route path="/" page={HomePage} name="home" />
-          <Route notfound page={NotFoundPage} />
         </Set>
-        <Set wrap={AppLayout}>
-          <Route path="/profile" page={ProfilePage} name="profile" />
+        <Private wrap={AppLayout} unauthenticated="login">
+          <Route path="/profile" page={UserProfilePage} name="profile" />
           <Route path="/message" page={MessagePage} name="message" />
           <Route path="/messages" page={MessagesPage} name="messages" />
           <Route path="/chatroom" page={ChatroomPage} name="chatroom" />
           <Route path="/selfie" page={SelfiePage} name="selfie" />
           <Route path="/wallet" page={WalletPage} name="wallet" />
           <Route path="/friends" page={FriendsPage} name="friends" />
-          {/* <Private unauthenticated="login"></Private> */}
-        </Set>
+        </Private>
+        <Route notfound page={NotFoundPage} />
       </AllContextProviders>
     </Router>
   )

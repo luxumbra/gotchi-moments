@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useRef } from 'react'
 
 import { motion, useCycle } from 'framer-motion'
 import { v4 as uuidv4 } from 'uuid'
@@ -24,7 +24,11 @@ const menuVariants = {
 export const navItems = [
   { name: 'Home', path: 'home', isPrivate: false },
   { name: 'Wallet', path: 'wallet', isPrivate: true },
-  { name: 'Profile', path: 'profile', isPrivate: true },
+  // {
+  //   name: 'Profile',
+  //   path: 'users',
+  //   isPrivate: true,
+  // },
   { name: 'Messages', path: 'messages', isPrivate: true },
   { name: 'Chat', path: 'chatroom', isPrivate: true },
   { name: 'Selfie', path: 'selfie', isPrivate: true },
@@ -58,7 +62,7 @@ const sidebar = {
 }
 
 const Header = () => {
-  const { isAuthenticated } = useAuth()
+  const { isAuthenticated, currentUser } = useAuth()
   const [isOpen, toggleOpen] = useCycle(false, true)
   const containerRef = useRef(null)
   const height = useDimensions(containerRef)
@@ -68,14 +72,18 @@ const Header = () => {
       <header className="site-header z-50 overflow-y-visible font-display capitalize">
         <div className="site-header__wrapper">
           <div>
-            <Link to={routes.home()} title="GotchiMoments">
-              GM
+            <Link
+              to={routes.home()}
+              title="GotchiMoments"
+              className="text-white"
+            >
+              {currentUser ? `GM ${currentUser?.username}` : 'GM Anon'}
             </Link>
           </div>
           <MenuToggle toggle={() => toggleOpen()} />
         </div>
         <motion.nav
-          className="flex absolute top-1/4 left-auto z-40 min-h-full w-full items-center justify-center py-4 text-center text-3xl"
+          className="absolute top-1/4 left-auto z-40 flex min-h-full w-full items-center justify-center py-4 text-center text-3xl"
           initial={false}
           variants={{
             open: { opacity: 1, y: 0, display: 'flex' },
@@ -87,12 +95,12 @@ const Header = () => {
         >
           <motion.ul
             variants={menuVariants}
-            className="flex mx-auto w-11/12 flex-col gap-2 lg:w-1/12 lg:gap-5"
+            className="mx-auto flex w-11/12 flex-col gap-2 lg:w-1/12 lg:gap-5"
           >
             {navItems.map((item, i) => {
               const route = routes[item.path]()
               const id = uuidv4()
-              if (item.isPrivate && isAuthenticated) {
+              if (item.isPrivate && !isAuthenticated) {
                 return null
               }
               return (

@@ -20,7 +20,7 @@ const KEYP_REDIRECT_URI = process.env.APP_DOMAIN + '/redirect/keyp'
 const responseType = 'code'
 const params = {
   client_id: process.env.KEYP_CLIENT_ID,
-  scope: 'openid email profile',
+  scope: 'openid email',
   redirect_uri: KEYP_REDIRECT_URI,
 }
 

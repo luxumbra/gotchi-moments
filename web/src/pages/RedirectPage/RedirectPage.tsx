@@ -4,13 +4,12 @@ import { MetaTags } from '@redwoodjs/web'
 import { useAuth } from 'src/auth'
 import { useRedirection } from 'src/providers/redirection'
 
-const Redirect = ({ type, error }) => {
+const Redirect = ({ type }) => {
   const { errorMessage, successMessage, isLoading } = useRedirection()
   console.log('useRedirection')
 
   console.log('Redirect', {
     type,
-    error,
     errorMessage,
     successMessage,
     isLoading,
@@ -27,7 +26,11 @@ const Redirect = ({ type, error }) => {
   }
 
   let callToAction: React.ReactElement | null = null
-  if (['chess', 'node_oidc', 'discord', 'twitter'].includes(type)) {
+  if (
+    ['chess', 'node_oidc', 'google', 'discord', 'twitter', 'keyp'].includes(
+      type
+    )
+  ) {
     if (successMessage) {
       callToAction = (
         <button
@@ -51,7 +54,7 @@ const Redirect = ({ type, error }) => {
     }
   }
   return (
-    <div className="chess-background flex min-h-screen flex-col">
+    <div className="container mx-auto w-11/12 py-28">
       <div className="align-center flex w-full flex-grow flex-col items-center justify-center">
         <div className="redirect-container w-80 sm:w-96">
           <div className="redirect-contents w-full">
@@ -69,7 +72,7 @@ const Redirect = ({ type, error }) => {
                   <h2 className="mt-6 text-lg tracking-tight text-red-400">
                     Oops - there was an issue
                   </h2>
-                  <p className="text-error mt-8">
+                  <p className="mt-8 text-error">
                     {errorMessage.substring(0, 200)}
                   </p>
                 </>

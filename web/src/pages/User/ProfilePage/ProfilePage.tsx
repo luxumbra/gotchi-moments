@@ -3,11 +3,16 @@ import { useCopyToClipboard } from 'usehooks-ts'
 import { MetaTags } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
+import UserCell from 'src/components/User/UserCell'
 import successSound from 'src/lib/assets/sounds/interactions/success.mp3'
 import { shortenAddress } from 'src/utils/helpers'
 
-const ProfilePage = () => {
-  const address = '0xd669da4a797f226cbe4922f73e758be8d47f9a49'
+type ProfilePageProps = {
+  id: string
+}
+
+const ProfilePage = ({ id }: ProfilePageProps) => {
+  const address = id
   const displayAddress = shortenAddress(address)
   const email = 'gotchi420@gotchifrens.xyz'
   const [value, copy] = useCopyToClipboard()
@@ -62,6 +67,7 @@ const ProfilePage = () => {
                   </span>
                 </p>
                 <p className="text-xl lg:text-2xl">Email: {email}</p>
+                <UserCell id={id} />
               </div>
             </div>
           </div>

@@ -29,33 +29,34 @@ const MenuToggle = ({ toggle }) => {
   return (
     <motion.button
       onClick={() => (handleClick(), toggle())}
-      className="relative z-[100] border"
+      className="relative z-[100]"
       variants={{
-        open: { rotate: 180, y: -7 },
-        closed: { rotate: 0, y: 0 },
+        visible: { rotate: 90, y: -7, transition: { duration: 0.2 } },
+        hidden: { rotate: 0, y: 0 },
       }}
-      transition={{ duration: 0.2 }}
     >
       <svg width="26" height="26" viewBox="0 0 26 26">
         <Path
+          d="M 2 2.5 L 20 2.5"
           variants={{
-            closed: { d: 'M 2 2.5 L 20 2.5' },
-            open: { d: 'M 3 16.5 L 17 2.5' },
+            visible: { d: 'M 2 2.5 L 20 2.5' },
+            hidden: { d: 'M 3 16.5 L 17 2.5' },
           }}
         />
         <Path
           d="M 2 9.423 L 20 9.423"
           variants={{
-            closed: { opacity: 1, x: 0 },
-            open: { opacity: 0, x: -20 },
+            visible: { opacity: 1, x: 0, transition: { duration: 0.2 } },
+            hidden: { opacity: 0, x: -20 },
           }}
-          transition={{ duration: 0.1 }}
         />
         <Path
+          d="M 2 16.346 L 20 16.346"
           variants={{
-            closed: { d: 'M 2 16.346 L 20 16.346' },
-            open: { d: 'M 3 2.5 L 17 16.346' },
+            visible: { d: 'M 2 16.346 L 20 16.346' },
+            hidden: { d: 'M 3 2.5 L 17 16.346' },
           }}
+          transition={{ duration: 0.1 }}
         />
       </svg>
     </motion.button>
