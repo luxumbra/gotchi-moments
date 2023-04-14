@@ -1,0 +1,48 @@
+.gotchi-list {
+  width: 80%;
+  height: auto;
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #47179c;
+  border-radius: 10px;
+  margin: 0 auto;
+}
+
+.gotchi-list:hover {
+  transition: all 0.1545s ease-in-out;
+  transform: scale(1.05);
+  box-shadow: 0 0 30px #fa34f3,
+              0 0 30px #fa34f3,
+              0 0 30px #fa34f3;
+}
+
+.gotchi-list:not(:hover) {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  box-shadow: none;
+}
+
+
+.gotchi-svg {
+  width: 24vh;
+  height: 24vh;
+  margin-left: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 3%;
+}
+
+.gotchi-details {
+  display: flex;
+  flex-direction: column;
+  margin: 1%;
+  font-family: 'Pixelar', sans-serif;
+  //font-size: 300%;
+  color: #f2f2f2;
+  white-space: nowrap;
+  flex-grow: 1;
+}
