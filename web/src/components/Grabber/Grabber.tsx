@@ -33,7 +33,13 @@ const Grabber = () => {
         )
         const gotchisData = await Promise.all(gotchisPromises)
         console.log('Gotchis data:', gotchisData)
-        setGotchis(gotchisData)
+
+        // Those without names are portals. Can be used later
+        const filteredGotchis = gotchisData.filter(
+          (gotchi: any) => gotchi.name && gotchi.name.trim() !== ''
+        )
+
+        setGotchis(filteredGotchis)
       } catch (error) {
         console.error('Error fetching gotchis:', error)
       }
