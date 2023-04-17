@@ -1,7 +1,7 @@
 import { Link, routes } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
-import Grabber from '../../components/Grabber/Grabber'
+import Grabber from '../../components/Grabber/GotchiCards'
 
 const FriendsPage = () => {
   return (

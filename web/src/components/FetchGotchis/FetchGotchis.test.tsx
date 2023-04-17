@@ -1,14 +1,14 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Grabber from './Grabber'
+import FetchGotchis from './FetchGotchis'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
 
-describe('Grabber', () => {
+describe('FetchGotchis', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Grabber />)
+      render(<FetchGotchis />)
     }).not.toThrow()
   })
 })

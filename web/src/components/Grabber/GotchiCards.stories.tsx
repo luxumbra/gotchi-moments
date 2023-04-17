@@ -13,7 +13,7 @@
 
 import type { ComponentMeta } from '@storybook/react'
 
-import Grabber from './Grabber'
+import Grabber from './GotchiCards'
 
 export const generated = () => {
   return <Grabber />
