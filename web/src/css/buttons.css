@@ -26,7 +26,15 @@
   box-shadow: 0 0 0 1px #FA34F3, 0 0 0 4px rgba(250,52,243,9);
 }
 
+.favorite-icon {
+  width: 32px;
+  height: 32px;
+}
 
+.favorite-icon:hover {
+  width: 48px;
+  height: 48px;
+}
 
 
 

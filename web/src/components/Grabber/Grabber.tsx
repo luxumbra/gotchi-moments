@@ -12,39 +12,42 @@ import GotchiList from './GotchiList'
 
 import '../../css/buttons.css'
 
-const Grabber = () => {
-  const [address, setAddress] = useState('')
-  const hardcodedContractAddress = '0x86935F11C86623deC8a25696E1C19a8659CbF95d'
-  const [gotchis, setGotchis] = useState<Aavegotchi[]>([])
+const hardcodedContractAddress = '0x86935F11C86623deC8a25696E1C19a8659CbF95d'
+const infuraUrl = `https://polygon-mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_API_KEY}`
+const web3 = new Web3(new Web3.providers.HttpProvider(infuraUrl))
+const contract = new web3.eth.Contract(
+  contractABI1155 as AbiItem[],
+  hardcodedContractAddress
+)
 
-  const infuraUrl = `https://polygon-mainnet.infura.io/v3/${process.env.REACT_APP_INFURA_API_KEY}`
-  const web3 = new Web3(new Web3.providers.HttpProvider(infuraUrl))
-  const contract = new web3.eth.Contract(
-    contractABI1155 as AbiItem[],
-    hardcodedContractAddress
-  )
+export const fetchGotchis = async (
+  address: string,
+  setGotchis: (gotchis: Aavegotchi[]) => void
+) => {
+  if (contract && address) {
+    try {
+      const tokenIds = await contract.methods.tokenIdsOfOwner(address).call()
+      const gotchisPromises = tokenIds.map((id: BigNumber) =>
+        contract.methods.getAavegotchi(id).call()
+      )
+      const gotchisData = await Promise.all(gotchisPromises)
+      console.log('Gotchis data:', gotchisData)
 
-  const fetchGotchis = async () => {
-    if (contract && address) {
-      try {
-        const tokenIds = await contract.methods.tokenIdsOfOwner(address).call()
-        const gotchisPromises = tokenIds.map((id: BigNumber) =>
-          contract.methods.getAavegotchi(id).call()
-        )
-        const gotchisData = await Promise.all(gotchisPromises)
-        console.log('Gotchis data:', gotchisData)
+      // Those without names are portals. Can be used later
+      const filteredGotchis = gotchisData.filter(
+        (gotchi: any) => gotchi.name && gotchi.name.trim() !== ''
+      )
 
-        // Those without names are portals. Can be used later
-        const filteredGotchis = gotchisData.filter(
-          (gotchi: any) => gotchi.name && gotchi.name.trim() !== ''
-        )
-
-        setGotchis(filteredGotchis)
-      } catch (error) {
-        console.error('Error fetching gotchis:', error)
-      }
+      setGotchis(filteredGotchis)
+    } catch (error) {
+      console.error('Error fetching gotchis:', error)
     }
   }
+}
+
+const Grabber = () => {
+  const [address, setAddress] = useState('')
+  const [gotchis, setGotchis] = useState<Aavegotchi[]>([])
 
   return (
     <div style={{ margin: '5%' }}>
@@ -58,7 +61,7 @@ const Grabber = () => {
         />
         <button
           className="md:text-md custom-btn btn-outline btn-md btn mt-4 text-sm sm:text-sm lg:text-lg"
-          onClick={fetchGotchis}
+          onClick={() => fetchGotchis(address, setGotchis)}
         >
           Fetch Gotchis
         </button>

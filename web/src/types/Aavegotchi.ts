@@ -1,5 +1,8 @@
 export type Aavegotchi = {
   tokenId: number
   name: string
-  // Add other properties relevant to your Aavegotchis here
+  modifiedNumericTraits: Int16Array
+  equippedWearables: Uint16Array
+  modifiedRarityScore: number
+  kinship: number
 }
