@@ -1,14 +1,13 @@
 import { render } from '@redwoodjs/testing/web'
 
-import Grabber from './GotchiCards'
+import GotchiCards from './GotchiCards'
 
 //   Improve this test with help from the Redwood Testing Doc:
 //    https://redwoodjs.com/docs/testing#testing-components
-
-describe('Grabber', () => {
+describe('GotchiCards', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<Grabber />)
+      render(<GotchiCards gotchis={[]} />)
     }).not.toThrow()
   })
 })
